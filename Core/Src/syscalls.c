@@ -135,6 +135,7 @@ void initialise_monitor_handles()
 {
 
 }
+*/
 
 int _kill(int pid, int sig)
 {
@@ -148,9 +149,9 @@ void _exit (int status)
 	while (1) {}		// Make sure we hang here
 }
 
+/*
 int _close(int file)
 {
 	return -1;
 }
-
 */
