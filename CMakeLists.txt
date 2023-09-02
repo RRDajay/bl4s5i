@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10.0)
 
 # Setup the toolchain
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/arm-gcc-toolchain.cmake)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE BOOL ON FORCE)
 
 project(stm32l4s5xx)
 enable_language(C CXX ASM)
@@ -9,6 +10,7 @@ enable_language(C CXX ASM)
 # Build freeRTOS kernel as a static library
 add_library(freertos_config INTERFACE)
 set(FREERTOS_PORT GCC_ARM_CM4F CACHE STRING "")
+
 target_include_directories(freertos_config SYSTEM
     INTERFACE Core/Inc
 )
